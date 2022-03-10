@@ -19,6 +19,16 @@
 <body class="p-4">
 	<%@include file="WEB-INF/jspf/navigation.jspf"%>
 	<h2>Books</h2>
+	<%
+	
+		if (request.getAttribute("vm") != null) {
+			List<Book> vm = (List<Book>)request.getAttribute("vm");
+			if (vm.size() > 0) {
+				
+			}
+		}
+	
+	%>
 	
 	<table class="table table-striped">
 		<tr>
@@ -27,12 +37,14 @@
 			<th>Price</th>
 		</tr>
 	
-
+		<%for (Book book: vm) { %>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><a href "<%=book.getName()%>"</td>
+			<td><%=book.getName() %></td>
+			<td><%=book.getPrice() %></td>
+			<td><%=book.getTerm() %></td>
 		</tr>
+		<%} %>
 	
 
 	</table>
