@@ -17,6 +17,8 @@ public class Book {
 	private double price;
 	private int term;
 	
+	public Book() {}
+	
 	/**
 	 * @param id
 	 * @param name
